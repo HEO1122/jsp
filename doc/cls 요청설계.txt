@@ -1,0 +1,54 @@
+#main 페이지 요청
+		요청내용 : http://localhost/cafe/main.cls
+		파라미터 : 무
+		컨트롤러 : com.increpas.coffee.controller.MainController
+		뷰		 : /WEB-INF/views/main.jsp
+	
+# 회원추가 폼보기 요청	
+		요청내용 : http://localhost/cafe/j05/addMember.cls
+		파라미터 : code
+		컨트롤러 : com.increpas.coffee.j05.AddMember
+		뷰		 : /WEB-INF/views/j05/addMember.jsp
+		
+# 회원정보 보기 taglib 처리페이지 요청	
+		요청내용 : http://localhost/cafe/j05/memberInfo.cls
+		파라미터 : name, id, gen, avt
+		컨트롤러 : com.increpas.coffee.j05.Memberinfo
+		뷰		 : /WEB-INF/views/j05/memberinfo.jsp
+		
+# 회원정보 보기 jquery 처리페이지 요청	
+		요청내용 : http://localhost/cafe/j05/memberinfo.cls
+		파라미터 : name, id, gen, avt
+		컨트롤러 : com.increpas.coffee.j05.MemberInfo2
+		뷰		 : /WEB-INF/views/j05/memberinfo2.jsp
+		
+		=============================================
+
+# 회원관련 요청설계(non-dispatch)	
+
+	
+# 로그인 폼 보기 jquery 처리페이지 요청	
+		요청내용 : http://localhost/cafe/member/login.cls
+		파라미터 : 무
+		컨트롤러 : com.increpas.coffee.controller.member.LoginForm
+		뷰		 : /WEB-INF/views/member/login.jsp
+
+# 로그인 처리요청
+		요청내용 : http://localhost/cafe/member/loginProc.cls
+		파라미터 : id, pw
+		컨트롤러 : com.increpas.coffee.controller.member.Cls.LoginProc
+		뷰		 : 
+		
+					로그인 성공 : 
+						redirect ] /cafe/main.cls
+					로그인 실패 :
+						redirect ] /cafe/member/login.cls
+		
+# 로그아웃 처리 요청
+		요청내용 : http://localhost/cafe/member/logout.cls
+		파라미터 : 무
+		컨트롤러 : com.increpas.coffee.controller.member.Logout
+		뷰		 : 
+					redirect ] http://localhost/cafe/main.cls
+
+
